@@ -15,39 +15,40 @@ $users[] = ["name" => "Anna", "email" => "anna@test.com","lang" => "ua"];
 $users[] = ["name" => "Ignat", "email" => "ignat@gmail.com","lang" => "fr"];
 $users[] = ["name" => "Nastya", "email" => "nastya@gmail.com","lang" => "de"];
 
-$count=[];
+//$count=[];
+//
+//foreach ($users as $user){
+//    if (!isset($count[$user["name"]])) {
+//        $count[$user["name"]]=0;
+//    }
+//    $count[$user["name"]]++;
+//}
+//foreach ($count as $key => $value){
+//    if ($value > 1) {
+//        echo 'Имя ' . $key . ' встречается ' . $value . ' раза ' . PHP_EOL;
+//    }
+//}
+//
+//$lang=[];
+//foreach ($users as $user) {
+//
+//    if (!isset($lang[$user["lang"]])) {
+//        $lang[$user["lang"]]=[];
+//    }
+//    $lang[$user["lang"]][] = $user;
+//}
+//
+//var_dump($lang);
 
-foreach ($users as $user){
-    if (!isset($count[$user["name"]])) {
-        $count[$user["name"]]=0;
-    }
-    $count[$user["name"]]++;
-}
-foreach ($count as $key => $value){
-    if ($value > 1) {
-        echo 'Имя ' . $key . ' встречается ' . $value . ' раза ' . PHP_EOL;
-    }
-}
-
-$lang=[];
-foreach ($users as $user) {
-
-    if (!isset($lang[$user["lang"]])) {
-        $lang[$user["lang"]]=[];
-    }
-    $lang[$user["lang"]][] = $user;
-}
-
-var_dump($lang);
-
-$lastUserIndex=count($users)-1;
+//$lastUserIndex=count($users)-1;
 $revertUsers=[];
-while($lastUserIndex >=0 ){
+//while($lastUserIndex >=0 ){
+//    $revertUsers[]=$users[$lastUserIndex];
+//    $lastUserIndex--;
+//}
+
+
+for ($lastUserIndex=count($users)-1;$lastUserIndex>=0;$lastUserIndex--) {
     $revertUsers[]=$users[$lastUserIndex];
-    $lastUserIndex--;
 }
 var_dump($revertUsers);
-
-
-
-

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Aslanova Anastasia",
+    "login": "Nastya",
+    "password": "233445",
+    "email": "nastya@gmail.com",
+    "language": "ru"
+  },
+  {
+    "name": "Roman Vitruk",
+    "login": "Roma",
+    "password": "12345678",
+    "email": "roma@gmail.com",
+    "language": "ua"
+  },
+  {
+    "name": "Fredy Adamson",
+    "login": "Fred",
+    "password": "54321",
+    "email": "fred@gmail.com",
+    "language": "en"
+  }
+]

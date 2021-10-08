@@ -17,3 +17,14 @@ $target = 9;
         }
     }
     var_dump(twoSum($nums,$target));
+//function twoSum(array $nums, int $target): array
+//{
+//    foreach ($nums as $key => $val) {
+//        unset($nums[$key]);
+//        $nextKey = array_search(($target - $val), $nums);
+//        if ($nextKey) {
+//            return [$key, $nextKey];
+//        }
+//    }
+//    return [];
+//}

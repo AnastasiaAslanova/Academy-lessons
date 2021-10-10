@@ -33,4 +33,8 @@ SELECT good_name FROM goods WHERE quantity=(SELECT max(quantity) FROM goods);
 UPDATE goods, (SELECT min(quantity) quantitymin FROM goods) goodsmin SET goods.quantity=goods.quantity*2
 WHERE goods.quantity = goodsmin.quantitymin;
 SELECT name,email,good_name FROM users u INNER JOIN shopping_cart sc on u.user_id = sc.user_id INNER JOIN goods g on sc.product_id=g.id ;
-
+SELECT category.name_of_category
+FROM  category
+          JOIN goods
+               ON  category.category_id = goods.category_id
+ORDER BY quantity DESC;

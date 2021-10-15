@@ -1,0 +1,62 @@
+version: "3"
+
+services:
+  #PHP Service
+  app:
+    build: .
+    container_name: app
+
+  #MySQL Service
+  db:
+    image: mysql:5.7
+    ports:
+      - "3320:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: beetroot
+      MYSQL_USER: beetroot
+      MYSQL_PASSWORD: beetroot
+    restart: always
+    container_name: mysql_beetroot
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+ #PHPMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8009:80"
+    environment:
+      PMA_HOST: mysql_beetroot
+      PMA_PORT: 3306
+    networks:
+      - app-network
+
+    #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
+    volumes:
+      - ./:/var/www
+      - ./configuration/nginx/conf.d/:/etc/nginx/conf.d/
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  db_data:
+    driver: local
+
+

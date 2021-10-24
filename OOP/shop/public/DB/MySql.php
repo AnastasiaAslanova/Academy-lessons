@@ -1,5 +1,5 @@
 <?php
-
+namespace Shop\DB;
 class MySQL
 {
     private $dsn;
@@ -44,7 +44,7 @@ class MySQL
     protected function connect()
     {
         try {
-            $this->connection = new PDO($this->dsn, $this->username, $this->password, $this->options);
+            $this->connection = new \PDO($this->dsn, $this->username, $this->password, $this->options);
         } catch (Throwable $e) {
             print "Ошибка подключения к базе данных: {$e->getMessage()} <br/>";
         }

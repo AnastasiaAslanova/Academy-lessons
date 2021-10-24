@@ -1,6 +1,7 @@
 <?php
-require_once 'DB/mysql.php';
-require_once 'DB/UserRepository.php';
+use Shop\DB\MySql;
+use Shop\DB\UserRepository;
+require_once 'avtoluader.php';
 $repository = new UserRepository(MySQL::getInstance());
 
 $user = $repository->getUserByEmail($_POST['email']);

@@ -1,5 +1,5 @@
 <?php
-
+namespace Shop\DB;
 class CartRepository
 {
     private $mysql;

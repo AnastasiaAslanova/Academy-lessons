@@ -1,6 +1,7 @@
 <?php
-require_once 'DB/mysql.php';
-require_once 'DB/GoodsRepository.php';
+use Shop\DB\MySql;
+use Shop\DB\GoodsRepository;
+require_once 'avtoluader.php';
 $repository = new GoodsRepository(MySQL::getInstance());
 $goods = $repository->getAll();
 
@@ -15,7 +16,7 @@ $goods = $repository->getAll();
     <p><b>Выберете пожайлуста товар</b></p>
         <?php
         foreach ($goods as $idGood => $good){
-            ?><input type = "checkbox" name = "order[]" value = "<?php echo $idGood ?>" id = "<?php echo "option$idGood" ?>">
+            ?><input type = "checkbox" name = "order[]" value = "<?php echo $idGood + 1 ?>" id = "<?php echo "option$idGood" ?>">
                 <label for="<?php echo "option$idGood" ?>" > <?php echo $good['good_name']; ?> </label><br/>
         <?php } ?>
         <br/>

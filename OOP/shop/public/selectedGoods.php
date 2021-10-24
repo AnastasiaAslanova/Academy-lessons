@@ -1,6 +1,7 @@
 <?php
-require_once 'DB/mysql.php';
-require_once 'DB/CartRepository.php';
+use Shop\DB\MySql;
+use Shop\DB\CartRepository;
+require_once 'avtoluader.php';
 $repository = new CartRepository(MySQL::getInstance());
 session_start();
 //var_dump($_SESSION);

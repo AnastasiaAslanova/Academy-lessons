@@ -1,5 +1,5 @@
 <?php
-
+namespace Shop\DB;
 class GoodsRepository
 {
     private $mysql;
@@ -15,8 +15,8 @@ class GoodsRepository
         return $stmt->fetchAll();
     }
 
-    public function saveGoods()
-    {
-        $stmt=$this->mysql->getConnection()->prepare("INSERT into goods");
-    }
+//    public function saveGoods()
+//    {
+//        $stmt=$this->mysql->getConnection()->prepare("INSERT into goods");
+//    }
 }

@@ -1,7 +1,7 @@
 <?php
 use Shop\DB\MySql;
 use Shop\DB\UserRepository;
-require_once 'avtoluader.php';
+require_once __DIR__.'/../vendor/autoload.php';
 $repository = new UserRepository(MySQL::getInstance());
 
 $user = $repository->getUserByEmail($_POST['email']);

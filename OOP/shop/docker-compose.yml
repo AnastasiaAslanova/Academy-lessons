@@ -33,7 +33,7 @@ services:
     tty: true
     container_name: mysql_beetroot
     volumes:
-      - db_data:/var/lib/mysql
+      - ./db_data:/var/lib/mysql
       - ./mysql/my.cnf:/etc/mysql.cnf
     networks:
       - app-network

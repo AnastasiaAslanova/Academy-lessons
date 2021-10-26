@@ -1,7 +1,7 @@
 <?php
 use Shop\DB\MySql;
 use Shop\DB\GoodsRepository;
-require_once 'avtoluader.php';
+require_once __DIR__.'/../vendor/autoload.php';
 $repository = new GoodsRepository(MySQL::getInstance());
 $goods = $repository->getAll();
 

@@ -1,4 +1,5 @@
-composer.lock
+
 vendor
 nginx
 db_data
+logs

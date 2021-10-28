@@ -1,7 +1,17 @@
 {
+  "name": "nastya/test-shop",
+  "authors": [
+    {
+      "name": "Anastasia Aslanova",
+      "email": "nastyatkacenko53@gmail.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Shop\\DB\\":"public/DB/"
     }
+  },
+  "require": {
+    "monolog/monolog": "^2.3"
   }
 }
